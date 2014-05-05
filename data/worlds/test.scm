@@ -1,0 +1,11 @@
+(let ((s1 (add-object "ship.obj"))
+      (s2 (add-object "ship.obj")))
+  (set-object-position s1 -10.0 3.0 0.0)
+  (set-object-velocity s1 1.0 0.0 0.0)
+  (set-object-attitude s1 0.0 0.0 1.0 1.0)
+  (set-object-angular-velocity s1 0.0 1.0 0.0)
+
+  (set-object-position s2 10.0 -3.0 0.0)
+  (set-object-velocity s2 -1.0 0.0 0.0)
+  (set-object-attitude s2 0.0 0.0 -1.0 1.0)
+  (set-object-angular-velocity s2 0.0 1.0 0.0))

@@ -1,0 +1,15 @@
+(use-modules (srfi srfi-1))
+
+(define (process-network-message message)
+  (let ((type (first message)))
+    (cond ((equal? type 'op)
+           ;; (op time object-id (pos-x, pos-y, pos-z) (att-x, att-y, att-z, att-w))
+           (let ((object-id (third message))
+                 (time (second message)))
+             (apply set-object-position (append (list object-id time) (fourth message)))
+             (apply set-object-attitude (append (list object-id time) (fifth message)))))
+          ((equal? type 'om)
+           ;; (om object-id object-model)
+           (let ((object-id (second message)))
+             (set-object-model object-id (third message)))))))
+
