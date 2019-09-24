@@ -14,7 +14,7 @@ GUILE_LFLAGS = `guile-config link`
 CFLAGS = -Wall -std=c++11 $(DEBUG) $(DEFS) $(GUILE_CFLAGS)
 LFLAGS = $(GUILE_LFLAGS)
 LIBS_CLIENT = -l boost_system -l boost_timer -l ode -l osg -l osgDB -l osgGA -l osgViewer -l pthread
-LIBS_SERVER = -l boost_regex -l boost_system -l boost_timer -l ode
+LIBS_SERVER = -l boost_regex -l boost_system -l boost_timer -l ode -lpthread
 
 MAKEDEPEND = gcc -MM -std=c++11 $(INCLUDE)
 _OBJS_CLIENT = client.o ClientApp.o ClientScm.o Object.o ObjectNode.o TcpClient.o World.o WorldNode.o
